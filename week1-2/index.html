@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ph1 week1 2問目</title>
+  <title>HTML属性の練習</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-  <span class="box">200 x 200</span>
-  <span class="box">200 x 200</span>
-  <div class="box">200 x 200</div>
-</body>
+  <!-- ヘッダー部分 -->
+  <header id="main-header">
+    <h1 class="site-title">HTML属性練習サイト</h1>
+    <nav class="navigation">
+      <a href="#about">自己紹介</a>
+      <a href="#skills">スキル</a>
+      <a href="#contact">連絡先</a>
+    </nav>
+  </header>
 
+  <!-- メインコンテンツ -->
+  <main>
+    <!-- 自己紹介セクション -->
+    <section id="about" class="content-section">
+      <h2 class="section-title">自己紹介</h2>
+      <div class="profile-container">
+        <img src="./img/profile.jpg" alt="プロフィール画像" class="profile-image">
+        <p class="intro-text">こんにちは！Web開発を学習中の田中花子です。</p>
+      </div>
+    </section>
+
+    <!-- スキルセクション -->
+    <section id="skills" class="content-section">
+      <h2 class="section-title">学習中のスキル</h2>
+      <ul class="skill-list">
+        <li class="skill-item">HTML</li>
+        <li class="skill-item">CSS</li>
+        <li class="skill-item">JavaScript</li>
+      </ul>
+    </section>
+
+    <!-- 連絡先セクション -->
+    <section id="contact" class="content-section">
+      <h2 class="section-title">連絡先・リンク</h2>
+      <div class="contact-links">
+        <a href="mailto:tanaka@example.com" class="contact-link">メール</a>
+        <a href="https://github.com" class="contact-link external-link">GitHub</a>
+        <a href="https://twitter.com" class="contact-link external-link">Twitter</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer id="main-footer" class="site-footer">
+    <p class="copyright">&copy; 2024 田中花子</p>
+  </footer>
+</body>
 </html>

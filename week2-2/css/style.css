@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+/* 基本的なリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* 
+  練習問題：以下のコメントを外してFlexboxを適用してください
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  */
+}
+
+/* ロゴ */
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo a {
+  display: block;
+}
+
+/* ナビゲーション */
+.nav {
+  margin-top: 15px;
+}
+
+.nav-list {
+  list-style: none;
+  /* 
+  練習問題：以下のコメントを外してナビゲーションを横並びにしてください
+  display: flex;
+  gap: 30px;
+  */
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+/* メインコンテンツ */
+.main {
+  padding: 40px 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-title {
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* 練習セクション */
+.practice-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+.question {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* ヒントボックス */
+.hint-box {
+  background-color: #e8f4fd;
+  border: 1px solid #bee5eb;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.hint-title {
+  font-size: 18px;
+  color: #0c5460;
+  margin-bottom: 10px;
+}
+
+.hint-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hint-list li {
+  color: #0c5460;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.hint-list li:before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+}
+
+.hint-list code {
+  background-color: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  color: #e83e8c;
+}
+
+/* 
+完成形のCSS（参考用）：
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  margin-top: 0;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item {
+  margin-bottom: 0;
+}
+*/
