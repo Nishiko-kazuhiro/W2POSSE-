@@ -113,16 +113,12 @@ body {
 
 /* 
 練習問題：
-以下のコメントを外して、.target-textに適用してください
+以下に.target-textの追加スタイルを記述してください（既存のスタイルは変更せずに追加）
 
 目標：
 - 文字サイズを20pxにする
 - 文字色を青色(#3498db)にする  
 - テキストを中央揃えにする
 
-.target-text {
-  font-size: 20px;
-  color: #3498db;
-  text-align: center;
-}
+
 */

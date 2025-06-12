@@ -84,16 +84,24 @@ h3 {
   margin: 15px 0 10px;
 }
 
-/* 
+/*
 練習問題1: Grid Layoutの基本設定
-.grid-container に以下のプロパティを追加してください：
-- display: grid
-- grid-template-columns: 1fr 1fr （2列の等幅レイアウト）
-- gap: 20px
-- margin: 30px 0
-- padding: 20px
-- background-color: #f8f9fa
-- border-radius: 10px
+.grid-container に Grid Layout を実装してください
+
+目標：
+- 要素をグリッドレイアウトにする
+- 2列の等幅レイアウトを作成する
+- アイテム間に適切な間隔を設ける
+- 余白と背景色で見やすくする
+
+必要なプロパティ：
+- display: grid でグリッドレイアウトを適用
+- grid-template-columns で列数とサイズを定義
+- gap でアイテム間の間隔を指定
+- margin, padding で余白を調整
+- background-color, border-radius で見た目を整える
+
+ここにCSSを記述してください ⬇
 */
 .grid-container {
   /* ここにGrid Layoutのプロパティを追加してください */
@@ -208,12 +216,18 @@ h3 {
 
 /* 
 練習問題2: レスポンシブ対応
-@media (max-width: 768px) の中に以下を追加してください：
-.grid-container {
-  grid-template-columns: 1fr; （スマホでは1列表示）
-  gap: 15px;
-  padding: 15px;
-}
+@media (max-width: 768px) の中にスマートフォン向けのGrid設定を追加してください
+
+目標：
+- スマートフォンでは1列表示にする
+- 小さい画面に適した間隔と余白に調整する
+
+必要なプロパティ：
+- grid-template-columns: 1fr でスマホでは1列表示
+- gap: 15px で小さめの間隔
+- padding: 15px で小さめの余白
+
+ここにCSSを記述してください ⬇
 */
 @media (max-width: 768px) {
   /* ここにレスポンシブ用のGrid設定を追加してください */

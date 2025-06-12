@@ -7,51 +7,90 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <!-- ヘッダー部分 -->
-  <header id="main-header">
-    <h1 class="site-title">HTML属性練習サイト</h1>
-    <nav class="navigation">
+  <!-- 
+    HTML属性練習問題
+    以下のタグに適切な属性を追加してください
+  -->
+  
+  <!-- 
+    練習問題1: ヘッダー部分
+    - headerタグに id="main-header" を追加してください
+    - h1タグに class="site-title" を追加してください
+    - navタグに class="navigation" を追加してください
+  -->
+  <header>
+    <h1>HTML属性練習サイト</h1>
+    <nav>
       <a href="#about">自己紹介</a>
       <a href="#skills">スキル</a>
       <a href="#contact">連絡先</a>
     </nav>
   </header>
 
-  <!-- メインコンテンツ -->
+  <!-- 
+    練習問題2: メインコンテンツ
+    各sectionタグに適切なidとclass="content-section"を追加してください
+  -->
   <main>
-    <!-- 自己紹介セクション -->
-    <section id="about" class="content-section">
-      <h2 class="section-title">自己紹介</h2>
-      <div class="profile-container">
-        <img src="./img/profile.jpg" alt="プロフィール画像" class="profile-image">
-        <p class="intro-text">こんにちは！Web開発を学習中の田中花子です。</p>
+    <!-- 
+      練習問題3: 自己紹介セクション
+      - sectionに id="about" と class="content-section" を追加
+      - h2に class="section-title" を追加
+      - divに class="profile-container" を追加
+      - imgに class="profile-image" を追加
+      - pに class="intro-text" を追加
+    -->
+    <section>
+      <h2>自己紹介</h2>
+      <div>
+        <img src="profile.jpg" alt="プロフィール画像">
+        <p>こんにちは！Web開発を学習中の田中花子です。</p>
       </div>
     </section>
 
-    <!-- スキルセクション -->
-    <section id="skills" class="content-section">
-      <h2 class="section-title">学習中のスキル</h2>
-      <ul class="skill-list">
-        <li class="skill-item">HTML</li>
-        <li class="skill-item">CSS</li>
-        <li class="skill-item">JavaScript</li>
+    <!-- 
+      練習問題4: スキルセクション
+      - sectionに id="skills" と class="content-section" を追加
+      - h2に class="section-title" を追加
+      - ulに class="skill-list" を追加
+      - 各liに class="skill-item" を追加
+    -->
+    <section>
+      <h2>学習中のスキル</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
       </ul>
     </section>
 
-    <!-- 連絡先セクション -->
-    <section id="contact" class="content-section">
-      <h2 class="section-title">連絡先・リンク</h2>
-      <div class="contact-links">
-        <a href="mailto:tanaka@example.com" class="contact-link">メール</a>
-        <a href="https://github.com" class="contact-link external-link">GitHub</a>
-        <a href="https://twitter.com" class="contact-link external-link">Twitter</a>
+    <!-- 
+      練習問題5: 連絡先セクション
+      - sectionに id="contact" と class="content-section" を追加
+      - h2に class="section-title" を追加
+      - divに class="contact-links" を追加
+      - 各aタグに適切なclassを追加
+        - 1つ目: class="contact-link"
+        - 2つ目: class="contact-link external-link"
+        - 3つ目: class="contact-link external-link"
+    -->
+    <section>
+      <h2>連絡先・リンク</h2>
+      <div>
+        <a href="mailto:tanaka@example.com">メール</a>
+        <a href="https://github.com">GitHub</a>
+        <a href="https://twitter.com">Twitter</a>
       </div>
     </section>
   </main>
 
-  <!-- フッター -->
-  <footer id="main-footer" class="site-footer">
-    <p class="copyright">&copy; 2024 田中花子</p>
+  <!-- 
+    練習問題6: フッター部分
+    - footerに id="main-footer" と class="site-footer" を追加
+    - pに class="copyright" を追加
+  -->
+  <footer>
+    <p>&copy; 2024 田中花子</p>
   </footer>
 </body>
 </html>

@@ -212,16 +212,19 @@ body {
 
 /* 
 練習問題：
-以下のコメントを外して、.practice-boxに適用してください
+以下の目標に従って、.practice-boxのスタイルを記述してください
 
 目標：
 - 上下に20pxのmarginを設定する
-- 左右に30pxのpaddingを設定する
+- 左右に30pxのpaddingを設定する  
 - 背景色を薄い青色(#e3f2fd)に変更する
 
-.practice-box {
-  margin: 20px 10px;
-  padding: 10px 30px;
-  background-color: #e3f2fd;
-}
+必要なプロパティ：
+- margin: 上下の値 左右の値 を使ってマージンを指定
+- padding: 上下の値 左右の値 を使ってパディングを指定
+- background-color: カラーコードで背景色を指定
+
+ここにCSSを記述してください ⬇
 */
+
+/* .practice-boxの追加スタイルをここに記述 */

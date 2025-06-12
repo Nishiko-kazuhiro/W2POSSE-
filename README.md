@@ -6,7 +6,7 @@ PH1ではHTML・CSS・JavaScriptを利用し、Webサイト制作を行ってい
 
 ## 📚 学習フロー
 
-### Phase 1: HTML・CSS基礎（Week01-04）
+### HTML・CSS基礎（Week01-04）
 **HTML基礎からレイアウト応用まで**
 
 - **Week01**: HTML基礎タグの習得
@@ -14,13 +14,13 @@ PH1ではHTML・CSS・JavaScriptを利用し、Webサイト制作を行ってい
 - **Week03**: レイアウト応用（margin・padding、中央寄せ）
 - **Week04**: Grid Layoutによる高度なレイアウト
 
-### Phase 2: JavaScript基礎（Week08-09）
-**プログラミング基礎の習得**
+### JavaScript基礎（Week08-09）
+**JS基礎の習得**
 
 - **Week08**: JavaScript概要（console.log、四則演算）
 - **Week09**: JavaScript基礎文法（変数・定数、条件分岐）
 
-### Phase 3: JavaScript応用（Week10-16）
+### JavaScript応用（Week10-16）
 **動的なWebサイト制作**
 
 - **Week10-16**: DOM操作、イベント処理、ライブラリ活用など
@@ -116,24 +116,24 @@ drill-ph1/
 
 ### 学習支援
 - カリキュラム内の参考動画・記事
-- Discord質問チャンネル
+- Discord質問チャンネル（わからないことがあればまずGitHub Discussionsで検索・質問してから利用しましょう）
 - 縦もく（もくもく会）での相談
 
 ## 🎉 学習完了の目安
 
-### Phase 1完了時点（Week04終了）
+### Week04 完了時点
 - [ ] 基本的なHTMLタグを適切に使用できる
 - [ ] CSSでレイアウトを組むことができる
 - [ ] FlexboxとGrid Layoutを使い分けできる
 - [ ] レスポンシブデザインの基礎を理解している
 
-### Phase 2完了時点（Week09終了）
+### Week09 完了時点
 - [ ] JavaScriptの基本文法を理解している
 - [ ] 変数・定数を適切に使用できる
 - [ ] 条件分岐とループ処理を書ける
 - [ ] 関数の定義と呼び出しができる
 
-### Phase 3完了時点（Week16終了）
+### Week16 完了時点
 - [ ] DOM操作でHTMLを動的に変更できる
 - [ ] イベント処理でインタラクティブなサイトを作れる
 - [ ] 外部ライブラリを活用できる

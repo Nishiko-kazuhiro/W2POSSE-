@@ -25,10 +25,16 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   /* 
-  練習問題：以下のコメントを外してFlexboxを適用してください
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  練習問題1：Flexboxを使ってヘッダーレイアウトを調整してください
+  
+  目標：ロゴとナビゲーションを横並びにし、両端に配置する
+  
+  必要なプロパティ：
+  - display: flex を使ってフレックスボックスレイアウトにする
+  - justify-content: space-between を使って両端に配置する  
+  - align-items: center を使って上下中央揃えにする
+  
+  ここにCSSを記述してください ⬇
   */
 }
 
@@ -50,9 +56,15 @@ body {
 .nav-list {
   list-style: none;
   /* 
-  練習問題：以下のコメントを外してナビゲーションを横並びにしてください
-  display: flex;
-  gap: 30px;
+  練習問題2：ナビゲーションリストを横並びにしてください
+  
+  目標：縦に並んでいるナビゲーションリストを横並びにし、適切な間隔を空ける
+  
+  必要なプロパティ：
+  - display: flex を使ってリストアイテムを横並びにする
+  - gap: 30px を使ってアイテム間の間隔を調整する
+  
+  ここにCSSを記述してください ⬇
   */
 }
 
@@ -162,24 +174,11 @@ body {
 }
 
 /* 
-完成形のCSS（参考用）：
+追加の調整が必要な場合のヒント：
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+ナビゲーションが正しく表示されるように、以下の調整も行ってください：
+- .nav の margin-top を 0 にする
+- .nav-item の margin-bottom を 0 にする
 
-.nav {
-  margin-top: 0;
-}
-
-.nav-list {
-  display: flex;
-  gap: 30px;
-}
-
-.nav-item {
-  margin-bottom: 0;
-}
+これらの調整により、ヘッダー全体が綺麗に配置されます。
 */

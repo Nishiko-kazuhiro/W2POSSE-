@@ -321,24 +321,25 @@ body {
 
 /* 
 練習問題：
-以下のコメントを外して、各クラスに適用してください
+以下の課題に従って、各クラスのスタイルを記述してください
 
 問題1: テキストを中央寄せ
-.practice-text-area {
-  text-align: center;
-}
+.practice-text-area にテキストを中央寄せするプロパティを追加
+ヒント: text-align プロパティを使用
 
-問題2: ボックスを中央寄せ
-.practice-box {
-  margin: 0 auto;
-}
+問題2: ボックスを中央寄せ  
+.practice-box にボックスを中央寄せするプロパティを追加
+ヒント: margin の左右にautoを指定
 
 問題3: 両方を組み合わせ
-.practice-combined-box {
-  margin: 0 auto;
-}
+.practice-combined-box と .practice-combined-text の両方に適切なプロパティを追加
+ヒント: 上記2つの手法を組み合わせる
 
-.practice-combined-text {
-  text-align: center;
-}
+ここに各クラスのCSSを記述してください ⬇
 */
+
+/* 問題1: .practice-text-area のスタイルをここに記述 */
+
+/* 問題2: .practice-box のスタイルをここに記述 */
+
+/* 問題3: .practice-combined-box と .practice-combined-text のスタイルをここに記述 */
