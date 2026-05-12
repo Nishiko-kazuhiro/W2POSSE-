@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week06-2 ゴールUI（修正後）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-amber-50 flex flex-col items-center justify-center gap-4 p-6">
+
+  <div class="max-w-lg rounded-lg border border-amber-200 bg-white p-6 shadow-md">
+    <h1 class="text-lg font-bold text-amber-900">問題2 · バグを直したあと</h1>
+    <p class="mt-2 text-sm text-amber-800">5000円・3人 → <span class="font-semibold">1667円</span>（切り上げ）</p>
+  </div>
+
+  <div class="w-full max-w-md rounded-xl bg-white p-8 shadow-lg ring-1 ring-slate-200">
+    <h1 class="text-xl font-bold text-slate-800">割り勘チェック（デモ）</h1>
+    <p class="mt-2 text-sm text-slate-600">index.html のバグを直すと、このように正しい金額になります。</p>
+
+    <div class="mt-6 space-y-4">
+      <div>
+        <label for="total" class="mb-1 block text-sm font-medium text-slate-700">合計金額（円）</label>
+        <input id="total" type="number" value="5000" min="0"
+          class="w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-200">
+      </div>
+      <div>
+        <label for="people" class="mb-1 block text-sm font-medium text-slate-700">人数</label>
+        <input id="people" type="number" value="3" min="1"
+          class="w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-200">
+      </div>
+    </div>
+
+    <button type="button" id="calcBtn"
+      class="mt-6 w-full rounded-lg bg-amber-600 py-3 text-sm font-bold text-white hover:bg-amber-700">
+      計算する
+    </button>
+
+    <p id="result" class="mt-6 text-center text-2xl font-bold text-amber-700">1667 円</p>
+  </div>
+
+  <script>
+    const totalInput = document.querySelector("#total");
+    const peopleInput = document.querySelector("#people");
+    const result = document.querySelector("#result");
+    document.querySelector("#calcBtn").addEventListener("click", () => {
+      const total = Number(totalInput.value);
+      const people = Number(peopleInput.value);
+      if (total <= 0 || people <= 0) {
+        result.textContent = "入力を確認してください";
+        return;
+      }
+      const perPerson = Math.ceil(total / people);
+      result.textContent = perPerson + " 円";
+    });
+  </script>
+</body>
+</html>
