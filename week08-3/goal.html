@@ -3,55 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week08-3 ゴールUI｜名前ソート</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Week08-3 メンバーリスト</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .btn-sort {
+      padding: 6px 14px;
+      background: #e2e8f0;
+      color: #475569;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-sort:hover { background: #cbd5e1; }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .member-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      padding: 18px;
+    }
+    .member-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .member-role {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+    .member-comment {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-sky-50 to-white">
-
-  <header class="border-b border-sky-100 bg-white/80 backdrop-blur">
-    <div class="mx-auto flex max-w-4xl flex-col gap-4 px-6 py-8 sm:flex-row sm:items-center sm:justify-between">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-sky-600">Week08 復習</p>
-        <h1 class="mt-1 text-3xl font-bold text-slate-900">プロジェクト班メンバー</h1>
-        <p class="mt-2 max-w-xl text-sm text-slate-600">配列をソートして <code class="rounded bg-slate-100 px-1 text-xs">forEach</code> でカード再描画（DOM・Tailwind・イベント）</p>
-      </div>
-      <button type="button" id="sortBtn"
-        class="shrink-0 rounded-xl bg-sky-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-sky-600/30 hover:bg-sky-700">
-        名前順に並べる
-      </button>
-    </div>
+<body>
+  <header>
+    <h1>メンバーリスト</h1>
+    <button class="btn-sort" id="sortBtn">名前順</button>
   </header>
 
-  <main class="mx-auto max-w-4xl px-6 py-10">
-    <div id="memberCards" class="grid gap-4 sm:grid-cols-2"></div>
-  </main>
+  <div class="grid-3" id="memberGrid"></div>
 
   <script>
     let members = [
-      { name: "福田", team: "UI" },
-      { name: "青木", team: "API" },
-      { name: "石井", team: "議事録" },
-      { name: "佐藤", team: "進行" },
+      { name: '田中 じゅん', role: 'フロントエンド', comment: 'Reactが好き' },
+      { name: '佐藤 はな',   role: 'デザイン',       comment: 'Figmaが得意' },
+      { name: '鈴木 けん',   role: 'バックエンド',   comment: 'DBが面白い' },
     ];
 
-    const container = document.querySelector("#memberCards");
-
     function render() {
-      container.innerHTML = "";
-
-      members.forEach((m) => {
-        const card = document.createElement("div");
-        card.className = "rounded-2xl border border-slate-200 bg-white p-5 shadow-sm";
+      const grid = document.getElementById('memberGrid');
+      grid.innerHTML = '';
+      members.forEach(function(m) {
+        const card = document.createElement('div');
+        card.className = 'member-card';
         card.innerHTML =
-          "<p class=\"text-lg font-bold text-slate-900\">" + m.name + "</p>" +
-          "<p class=\"mt-1 text-sm text-sky-700\">担当: " + m.team + "</p>";
-        container.appendChild(card);
+          '<p class="member-name">' + m.name + '</p>' +
+          '<p class="member-role">' + m.role + '</p>' +
+          '<p class="member-comment">' + m.comment + '</p>';
+        grid.appendChild(card);
       });
     }
 
-    document.querySelector("#sortBtn").addEventListener("click", () => {
-      members = members.slice().sort((a, b) => {
-        return a.name.localeCompare(b.name, "ja");
+    document.getElementById('sortBtn').addEventListener('click', function() {
+      members = members.slice().sort(function(a, b) {
+        return a.name.localeCompare(b.name, 'ja');
       });
       render();
     });

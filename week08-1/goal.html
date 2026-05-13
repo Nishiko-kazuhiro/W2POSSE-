@@ -3,46 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week08-1 ゴールUI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Week08-1 部室備品リスト</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 32px 24px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 24px;
+    }
+    .table-wrap {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      max-width: 560px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    thead th {
+      background: #f1f5f9;
+      color: #64748b;
+      font-weight: 600;
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    tbody tr:nth-child(odd) { background: #fff; }
+    tbody tr:nth-child(even) { background: #f8fafc; }
+    tbody td {
+      padding: 12px 16px;
+      color: #1e293b;
+    }
+    .none { color: #94a3b8; }
+  </style>
 </head>
-<body class="min-h-screen bg-slate-50 p-8">
-
-  <div class="mx-auto max-w-3xl">
-    <h1 class="text-2xl font-bold text-slate-900">部室備品リスト</h1>
-    <p class="mt-2 text-sm text-slate-600">配列（オブジェクトの列）を forEach でテーブル行に展開</p>
-
-    <div class="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-      <table class="min-w-full text-left text-sm">
-        <thead class="bg-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-600">
-          <tr>
-            <th class="px-4 py-3">備品名</th>
-            <th class="px-4 py-3">数量</th>
-            <th class="px-4 py-3">置き場所</th>
-          </tr>
-        </thead>
-        <tbody id="equipmentBody" class="divide-y divide-slate-200 text-slate-800"></tbody>
-      </table>
-    </div>
+<body>
+  <h1>部室備品リスト</h1>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>備品名</th>
+          <th>数量</th>
+          <th>借用者</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
   </div>
 
   <script>
     const items = [
-      { name: "ホワイトボード", qty: 2, place: "前方" },
-      { name: "プロジェクター", qty: 1, place: "天井ラック" },
-      { name: "延長コード", qty: 4, place: "棚A" },
-      { name: "名字札テープ", qty: 12, place: "引き出し" },
+      { name: 'プロジェクター', qty: 1, borrower: '田中' },
+      { name: 'ホワイトボード', qty: 2, borrower: null },
+      { name: '延長コード',     qty: 3, borrower: '佐藤' },
+      { name: 'スピーカー',     qty: 1, borrower: null },
     ];
 
-    const tbody = document.querySelector("#equipmentBody");
-
-    items.forEach((item) => {
-      const tr = document.createElement("tr");
-      tr.className = "hover:bg-slate-50";
+    const tbody = document.getElementById('tbody');
+    items.forEach(function(item) {
+      const tr = document.createElement('tr');
+      const borrowerHtml = item.borrower
+        ? item.borrower
+        : '<span class="none">なし</span>';
       tr.innerHTML =
-        "<td class=\"px-4 py-3 font-medium\">" + item.name + "</td>" +
-        "<td class=\"px-4 py-3 tabular-nums\">" + item.qty + "</td>" +
-        "<td class=\"px-4 py-3 text-slate-600\">" + item.place + "</td>";
+        '<td>' + item.name + '</td>' +
+        '<td>' + item.qty + '</td>' +
+        '<td>' + borrowerHtml + '</td>';
       tbody.appendChild(tr);
     });
   </script>

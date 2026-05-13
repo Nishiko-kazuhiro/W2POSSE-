@@ -3,68 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week06-3 ゴールUI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Week06-3 ポイント計算機</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .badge {
+      background: #e0e7ff;
+      color: #3730a3;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .cols {
+      display: flex;
+      gap: 16px;
+    }
+    .col-card {
+      flex: 1;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+    .col-card h2 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-bottom: 6px;
+    }
+    input[type="number"] {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      color: #1e293b;
+      outline: none;
+    }
+    input[type="number"]:focus { border-color: #6366f1; }
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 10px;
+      background: #6366f1;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover { background: #4f46e5; }
+    .result-label {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .result-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #16a34a;
+    }
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-slate-900 flex items-center justify-center p-6">
+<body>
+  <header>
+    <h1>ポイント計算機</h1>
+    <span class="badge">Week01-06復習</span>
+  </header>
 
-  <div class="flex w-full max-w-2xl flex-col gap-6 rounded-2xl bg-white p-6 shadow-2xl md:flex-row md:items-stretch">
-    <div class="flex w-full flex-col overflow-hidden rounded-xl md:w-1/3">
-      <div class="flex h-40 w-full flex-col items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-700 md:h-full md:min-h-[220px]">
-        <span class="text-6xl" aria-hidden="true">🥤</span>
-        <span class="mt-2 text-xs font-medium text-emerald-100">（画像の代わりにプレースホルダ）</span>
-      </div>
-      <div class="flex items-center justify-center bg-emerald-600 py-3 text-center text-sm font-bold text-white">
-        POSSE部室ストア
-      </div>
+  <div class="cols">
+    <div class="col-card">
+      <h2>購入金額</h2>
+      <label for="amount">金額（円）</label>
+      <input type="number" id="amount" value="12000" min="0">
+      <button class="btn" onclick="calc()">ポイント計算</button>
     </div>
-
-    <div class="flex flex-1 flex-col justify-center">
-      <p class="text-xs font-semibold uppercase tracking-wider text-emerald-600">復習ミニ課題</p>
-      <h1 class="mt-1 text-2xl font-bold text-slate-900">おやつ買い出しメモ</h1>
-      <p class="mt-2 text-sm text-slate-600">単価 × 個数の小計を JS で計算（Tailwind + Flex）</p>
-
-      <div class="mt-6 flex flex-wrap items-end gap-4">
-        <div class="flex-1 min-w-[120px]">
-          <label for="unit" class="mb-1 block text-xs font-medium text-slate-500">単価（円）</label>
-          <input id="unit" type="number" min="0" value="120" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900">
-        </div>
-        <div class="flex-1 min-w-[120px]">
-          <label for="qty" class="mb-1 block text-xs font-medium text-slate-500">個数</label>
-          <input id="qty" type="number" min="0" value="4" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900">
-        </div>
-      </div>
-
-      <div class="mt-6 flex items-center justify-between rounded-xl bg-slate-100 px-4 py-3">
-        <span class="text-sm font-medium text-slate-600">小計</span>
-        <span id="subtotal" class="text-2xl font-bold tabular-nums text-emerald-700">480 円</span>
-      </div>
-
-      <button type="button" id="recalc" class="mt-4 w-full rounded-lg border border-slate-200 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
-        再計算
-      </button>
+    <div class="col-card">
+      <h2>計算結果</h2>
+      <p class="result-label">獲得ポイント</p>
+      <p class="result-value" id="pts">120pt</p>
     </div>
   </div>
 
+  <footer>ポイント付与率: 1%（Math.floor使用）</footer>
+
   <script>
-    const unitInput = document.querySelector("#unit");
-    const qtyInput = document.querySelector("#qty");
-    const subtotalEl = document.querySelector("#subtotal");
-
-    function update() {
-      const unit = Number(unitInput.value);
-      const qty = Number(qtyInput.value);
-      if (!Number.isFinite(unit) || !Number.isFinite(qty) || unit < 0 || qty < 0) {
-        subtotalEl.textContent = "—";
-        return;
-      }
-      subtotalEl.textContent = unit * qty + " 円";
+    function calc() {
+      const amount = Number(document.getElementById('amount').value);
+      const pts = Math.floor(amount * 0.01);
+      document.getElementById('pts').textContent = pts + 'pt';
     }
-
-    document.querySelector("#recalc").addEventListener("click", update);
-    unitInput.addEventListener("input", update);
-    qtyInput.addEventListener("input", update);
-    update();
   </script>
 </body>
 </html>
