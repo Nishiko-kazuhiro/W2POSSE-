@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+/* 基本的なリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* 
+  練習問題1：Flexboxを使ってヘッダーレイアウトを調整してください
+  
+  目標：ロゴとナビゲーションを横並びにし、両端に配置する
+  
+  必要なプロパティ：
+  - display: flex を使ってフレックスボックスレイアウトにする
+  - justify-content: space-between を使って両端に配置する  
+  - align-items: center を使って上下中央揃えにする
+  
+  ここにCSSを記述してください ⬇
+  */
+}
+
+/* ロゴ */
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo a {
+  display: block;
+}
+
+/* ナビゲーション */
+.nav {
+  margin-top: 15px;
+}
+
+.nav-list {
+  list-style: none;
+  /* 
+  練習問題2：ナビゲーションリストを横並びにしてください
+  
+  目標：縦に並んでいるナビゲーションリストを横並びにし、適切な間隔を空ける
+  
+  必要なプロパティ：
+  - display: flex を使ってリストアイテムを横並びにする
+  - gap: 30px を使ってアイテム間の間隔を調整する
+  
+  ここにCSSを記述してください ⬇
+  */
+}
+
+.nav-item {
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+/* メインコンテンツ */
+.main {
+  padding: 40px 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-title {
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* 練習セクション */
+.practice-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+.question {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* ヒントボックス */
+.hint-box {
+  background-color: #e8f4fd;
+  border: 1px solid #bee5eb;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.hint-title {
+  font-size: 18px;
+  color: #0c5460;
+  margin-bottom: 10px;
+}
+
+.hint-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hint-list li {
+  color: #0c5460;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.hint-list li:before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+}
+
+.hint-list code {
+  background-color: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  color: #e83e8c;
+}
+
+/* 
+追加の調整が必要な場合のヒント：
+
+ナビゲーションが正しく表示されるように、以下の調整も行ってください：
+- .nav の margin-top を 0 にする
+- .nav-item の margin-bottom を 0 にする
+
+これらの調整により、ヘッダー全体が綺麗に配置されます。
+*/

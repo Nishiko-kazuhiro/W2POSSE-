@@ -5,16 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ph1 week1 1問目</title>
+  <title>Week04 Grid Layout基本練習</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <header>
     <div class="headerInner">
-      <h1 class="logo"><img src="./img/logo.png" width="150" height="64" alt=""></h1>
+      <h1 class="logo"><img src="./img/logo.png" width="150" height="64" alt="N水族館"></h1>
       <nav class="globalNav">
-        <a href="./contact/">お問い合わせ</a>
+        <a href="#grid-section">Grid Layout練習</a>
       </nav>
     </div>
   </header>
@@ -23,34 +23,71 @@
     <div class="keyVisual">
       <img src="./img/hero.jpg" alt="N水族館" width="1200" height="400">
     </div>
+    
     <div class="mainInner">
-      <article>
-        <section>
-          <div class="aboutWrapper">
-            <h2>N水族館とは？</h2>
-            <p class="clearfix"><img src="./img/pic1.jpg" width="200"
-                height="200">N水族館は、VR・AR・プロジェクションマッピング・モーションキャプチャーなどの最先端技術を取り入れ、ネットとリアルを融合させた次世代の水族館です。展示面積は世界最大規模で、さまざまな海の魚や海の動物達を間近で見ることができます。大迫力の巨大水槽や、独自の特殊効果を取り入れたイルカのショーなど、子供から大人まで楽しめる施設になっています。
-            </p>
+      <section id="grid-section">
+        <h2>Grid Layout基本練習</h2>
+        <p>以下のカードレイアウトは<strong>CSS Grid Layout</strong>を使用して作成されています。<br>
+        <code>display: grid</code>と<code>grid-template-columns</code>を使って2列レイアウトを実現しています。</p>
+        
+        <!-- Grid Layout練習エリア -->
+        <div class="grid-container">
+          <div class="card">
+            <img src="./img/pic1.jpg" alt="VR体験" width="200" height="150">
+            <h3>VR体験エリア</h3>
+            <p>最新のVR技術を使って、海の中を自由に泳ぎ回る体験ができます。まるで本当に海の中にいるような感覚を味わえます。</p>
           </div>
-        </section>
-        <section>
-          <div class="aboutWrapper">
-            <h2>VR HMDをかぶって海の中へ</h2>
-            <p class="clearfix"><img src="./img/pic2.jpg" width="200" height="200">用意されたVR
-              HMD（ヘッドマウントディスプレイ）をかぶると、まるで巨大水槽のど真ん中にいるかのような状況が再現されます。モーションキャプチャーによってお客様の動きを読み取り、巨大水槽の中を自由に動き回ることが可能です。また時間帯によっては魚たちに餌付け体験が出来たり、お客様同士でゲームを楽しむことも出来ます。
-            </p>
+          
+          <div class="card">
+            <img src="./img/pic2.jpg" alt="AR展示" width="200" height="150">
+            <h3>AR展示コーナー</h3>
+            <p>ARテクノロジーを活用した新しい展示方法で、魚たちの生態を詳しく学ぶことができます。</p>
           </div>
-        </section>
-        <section>
-          <div class="aboutWrapper">
-            <h2>バーチャルキャストによるイルカのショー</h2>
-            <p class="clearfix"><img src="./img/pic3.jpg" width="200"
-                height="200">イルカのショーには、人間ではなくN水族館オリジナルのバーチャルキャストが登場します。また、手元のスマートフォンからコメントやアクションを送信すると、リアルタイムに演出に反映され、インタラクティブなイルカショーを楽しむことができます。音楽や照明などの演出は毎回ランダムに生成されるため、見るたびに違う内容が上映されます。
-            </p>
+          
+          <div class="card">
+            <img src="./img/pic3.jpg" alt="イルカショー" width="200" height="150">
+            <h3>バーチャルイルカショー</h3>
+            <p>バーチャルキャストによる革新的なイルカショー。インタラクティブな演出で毎回違う内容をお楽しみいただけます。</p>
           </div>
-        </section>
-      </article>
-      <article>
+          
+          <div class="card">
+            <img src="./img/pic1.jpg" alt="海中散歩" width="200" height="150">
+            <h3>海中散歩体験</h3>
+            <p>モーションキャプチャー技術により、実際に海の中を歩いているような体験ができます。</p>
+          </div>
+          
+          <div class="card">
+            <img src="./img/pic2.jpg" alt="餌付け体験" width="200" height="150">
+            <h3>バーチャル餌付け</h3>
+            <p>VR空間内で魚たちに餌をあげる体験ができます。魚たちのリアクションも楽しめます。</p>
+          </div>
+          
+          <div class="card">
+            <img src="./img/pic3.jpg" alt="ゲーム体験" width="200" height="150">
+            <h3>海中ゲーム</h3>
+            <p>他の来館者と一緒に海の中でゲームを楽しむことができます。協力プレイも可能です。</p>
+          </div>
+        </div>
+        
+        <div class="grid-explanation">
+          <h3>Grid Layoutの仕組み</h3>
+          <p>上のレイアウトは以下のCSSで作成されています：</p>
+          <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}</code></pre>
+          <p><strong>ポイント：</strong></p>
+          <ul>
+            <li><code>display: grid</code>でGrid Layoutを有効化</li>
+            <li><code>grid-template-columns: 1fr 1fr</code>で2列の等幅レイアウト</li>
+            <li><code>1fr</code>は利用可能な空間を等分する単位</li>
+            <li><code>gap</code>でグリッドアイテム間の間隔を設定</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section>
         <div class="priceWrapper">
           <h2>料金について</h2>
           <p>1Fチケットセンターにてお買い求めいただけます</p>
@@ -65,17 +102,7 @@
             </tr>
           </table>
         </div>
-      </article>
-      <article>
-        <div class="noteWrapper">
-          <h2>ご注意</h2>
-          <ul>
-            <li>N水族館は<strong>全館禁煙</strong>でございます。</li>
-            <li>一度ご購入された入場券の払い戻しはできません。</li>
-            <li>営業時間･営業内容を予告なく変更する場合がございますので、あらかじめご了承ください。</li>
-          </ul>
-        </div>
-      </article>
+      </section>
     </div>
   </main>
 

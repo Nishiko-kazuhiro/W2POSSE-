@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week06-3 ポイント計算機</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .badge {
+      background: #e0e7ff;
+      color: #3730a3;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .cols {
+      display: flex;
+      gap: 16px;
+    }
+    .col-card {
+      flex: 1;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+    .col-card h2 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-bottom: 6px;
+    }
+    input[type="number"] {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      color: #1e293b;
+      outline: none;
+    }
+    input[type="number"]:focus { border-color: #6366f1; }
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 10px;
+      background: #6366f1;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover { background: #4f46e5; }
+    .result-label {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .result-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #16a34a;
+    }
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ポイント計算機</h1>
+    <span class="badge">Week01-06復習</span>
+  </header>
+
+  <div class="cols">
+    <div class="col-card">
+      <h2>購入金額</h2>
+      <label for="amount">金額（円）</label>
+      <input type="number" id="amount" value="12000" min="0">
+      <button class="btn" onclick="calc()">ポイント計算</button>
+    </div>
+    <div class="col-card">
+      <h2>計算結果</h2>
+      <p class="result-label">獲得ポイント</p>
+      <p class="result-value" id="pts">120pt</p>
+    </div>
+  </div>
+
+  <footer>ポイント付与率: 1%（Math.floor使用）</footer>
+
+  <script>
+    function calc() {
+      const amount = Number(document.getElementById('amount').value);
+      const pts = Math.floor(amount * 0.01);
+      document.getElementById('pts').textContent = pts + 'pt';
+    }
+  </script>
+</body>
+</html>

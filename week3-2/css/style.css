@@ -1,0 +1,345 @@
+@charset "utf-8";
+
+/* 基本的なリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* メインタイトル */
+.main-title {
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 説明文 */
+.description {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* セクションタイトル */
+.section-title {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* デモセクション */
+.demo-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.center-types {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.type-item {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+
+.type-item h3 {
+  font-size: 18px;
+  color: #495057;
+  margin-bottom: 15px;
+  text-align: center;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+/* text-align: center のデモ */
+.text-align-demo {
+  background-color: #fff3cd;
+  border: 2px dashed #ffc107;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.text-align-demo p {
+  margin-bottom: 10px;
+  color: #856404;
+}
+
+.inline-element {
+  background-color: #d4edda;
+  padding: 5px 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 3px;
+  color: #155724;
+}
+
+/* margin: 0 auto のデモ */
+.margin-auto-demo {
+  background-color: #f8d7da;
+  border: 2px dashed #dc3545;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.block-element {
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+  padding: 15px;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #0c5460;
+  border-radius: 3px;
+}
+
+.explanation-text {
+  font-size: 14px;
+  color: #6c757d;
+  text-align: center;
+  font-style: italic;
+}
+
+/* 比較セクション */
+.comparison-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f1f8e9;
+  border-radius: 5px;
+}
+
+.example-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.example-item {
+  flex: 1;
+  min-width: 250px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #c8e6c9;
+}
+
+.example-item h3 {
+  font-size: 16px;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* テキスト中央寄せの例 */
+.text-center-example {
+  background-color: #e8f5e8;
+  padding: 15px;
+  border: 1px solid #4caf50;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.text-center-example p {
+  margin-bottom: 8px;
+  color: #2e7d32;
+}
+
+/* ボックス中央寄せの例 */
+.box-center-container {
+  background-color: #e3f2fd;
+  padding: 15px;
+  border: 1px solid #2196f3;
+  border-radius: 3px;
+}
+
+.centered-box {
+  background-color: #bbdefb;
+  padding: 15px;
+  width: 180px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 3px;
+  color: #1565c0;
+}
+
+/* 画像中央寄せの例 */
+.image-center-example {
+  background-color: #fce4ec;
+  padding: 15px;
+  border: 1px solid #e91e63;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.image-placeholder {
+  background-color: #f8bbd9;
+  padding: 20px;
+  width: 150px;
+  margin: 0 auto;
+  border: 2px solid #e91e63;
+  border-radius: 3px;
+  color: #ad1457;
+  font-size: 12px;
+}
+
+/* 練習セクション */
+.practice-section {
+  padding: 20px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 5px;
+}
+
+.question {
+  font-size: 18px;
+  color: #856404;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.practice-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.practice-item {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+.practice-item h4 {
+  font-size: 16px;
+  color: #495057;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+/* 練習問題1: テキスト中央寄せ（初期状態） */
+.practice-text-area {
+  background-color: #f8f9fa;
+  border: 2px dashed #6c757d;
+  padding: 20px;
+  min-height: 80px;
+}
+
+.practice-text {
+  color: #495057;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* 練習問題2: ボックス中央寄せ（初期状態） */
+.practice-box-container {
+  background-color: #f8f9fa;
+  border: 2px dashed #6c757d;
+  padding: 20px;
+  min-height: 100px;
+}
+
+.practice-box {
+  background-color: #e9ecef;
+  border: 1px solid #adb5bd;
+  padding: 15px;
+  width: 250px;
+  border-radius: 3px;
+}
+
+.practice-box p {
+  margin: 0;
+  color: #495057;
+  font-size: 14px;
+}
+
+/* 練習問題3: 組み合わせ（初期状態） */
+.practice-combined-container {
+  background-color: #f8f9fa;
+  border: 2px dashed #6c757d;
+  padding: 20px;
+  min-height: 120px;
+}
+
+.practice-combined-box {
+  background-color: #e9ecef;
+  border: 1px solid #adb5bd;
+  padding: 20px;
+  width: 300px;
+  border-radius: 3px;
+}
+
+.practice-combined-text {
+  margin: 0;
+  color: #495057;
+  font-size: 16px;
+}
+
+.hint {
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-left: 4px solid #2196f3;
+  border-radius: 3px;
+}
+
+.hint p {
+  margin: 0;
+  font-size: 16px;
+  color: #1565c0;
+}
+
+/* 
+練習問題：
+以下の課題に従って、各クラスのスタイルを記述してください
+
+問題1: テキストを中央寄せ
+.practice-text-area にテキストを中央寄せするプロパティを追加
+ヒント: text-align プロパティを使用
+
+問題2: ボックスを中央寄せ  
+.practice-box にボックスを中央寄せするプロパティを追加
+ヒント: margin の左右にautoを指定
+
+問題3: 両方を組み合わせ
+.practice-combined-box と .practice-combined-text の両方に適切なプロパティを追加
+ヒント: 上記2つの手法を組み合わせる
+
+ここに各クラスのCSSを記述してください ⬇
+*/
+
+/* 問題1: .practice-text-area のスタイルをここに記述 */
+
+/* 問題2: .practice-box のスタイルをここに記述 */
+
+/* 問題3: .practice-combined-box と .practice-combined-text のスタイルをここに記述 */

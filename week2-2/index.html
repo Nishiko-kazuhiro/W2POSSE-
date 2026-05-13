@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Week02 Flexboxヘッダー練習</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="./index.html">
+          <img src="https://posse.community/images/logo-posse.svg" alt="POSSEロゴ">
+        </a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="./service.html" class="nav-link">Service</a>
+          </li>
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="content">
+      <h1 class="main-title">Flexboxヘッダー練習</h1>
+      <p class="description">
+        このページではFlexboxを使ったヘッダーレイアウトを練習します。<br>
+        上部のヘッダーがFlexboxで作られています。
+      </p>
+      
+      <div class="practice-section">
+        <h2 class="section-title">練習問題</h2>
+        <p class="question">
+          現在のヘッダーは要素が縦に並んでいます。<br>
+          CSSを修正して、ロゴとナビゲーションを横並びにしてください。
+        </p>
+        
+        <div class="hint-box">
+          <h3 class="hint-title">ヒント</h3>
+          <ul class="hint-list">
+            <li>ヘッダーコンテナに <code>display: flex</code> を適用する</li>
+            <li>ロゴとナビゲーションの間隔を調整するために <code>justify-content</code> を使う</li>
+            <li>ナビゲーションリストにも <code>display: flex</code> を適用する</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

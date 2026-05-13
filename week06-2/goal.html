@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week06-2 バグ診断</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 28px;
+      max-width: 520px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 16px;
+    }
+    pre {
+      background: #1e293b;
+      color: #f1f5f9;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin-bottom: 20px;
+      white-space: pre-wrap;
+    }
+    .question {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 14px;
+    }
+    .choice {
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: #475569;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .choice:hover {
+      border-color: #94a3b8;
+      background: #f8fafc;
+    }
+    .choice.selected {
+      border-color: #3b82f6;
+      background: #eff6ff;
+      color: #1e40af;
+    }
+    .choice-label {
+      font-weight: 700;
+      margin-right: 8px;
+      color: #64748b;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 18px;
+      padding: 12px;
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover { background: #15803d; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>型変換バグを見つけよう</h1>
+    <pre>const price = document.querySelector('#price').value; // "1200"（文字列）
+const qty   = document.querySelector('#qty').value;   // "3"（文字列）
+const total = price * qty;   // 3600（偶然動く）
+const tax   = total * 0.1;
+const result = total + tax;  // 3960（数値）
+console.log(result + "円");  // "3960円"</pre>
+
+    <p class="question">上のコードで、total + tax の計算は正しく動きますか？なぜですか？</p>
+
+    <div class="choice" id="choiceA" onclick="select('A')">
+      <span class="choice-label">A</span>はい、正しく動く。price*qty は自動で数値になるから
+    </div>
+    <div class="choice" id="choiceB" onclick="select('B')">
+      <span class="choice-label">B</span>いいえ、場合によっては壊れる。文字列のまま足し算になるケースがある
+    </div>
+
+    <button class="btn" onclick="check()">答え合わせ</button>
+  </div>
+
+  <script>
+    let selected = null;
+    function select(v) {
+      selected = v;
+      document.getElementById('choiceA').classList.toggle('selected', v === 'A');
+      document.getElementById('choiceB').classList.toggle('selected', v === 'B');
+    }
+    function check() {
+      if (!selected) { alert('選択してください'); return; }
+      if (selected === 'B') {
+        alert('正解！ price * qty は * 演算子で数値変換されますが、+ 演算子は文字列結合になる場合があります。Number() で明示変換するのが安全です。');
+      } else {
+        alert('不正解。* 演算子は数値変換しますが、+ は文字列結合にも使われるため、意図しない動作のリスクがあります。');
+      }
+    }
+  </script>
+</body>
+</html>
