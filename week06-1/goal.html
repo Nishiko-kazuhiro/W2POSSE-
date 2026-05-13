@@ -2,63 +2,103 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Week06-1 ゴールUI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.10);
+      border: 1px solid #e2e8f0;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    h1 { font-size: 20px; font-weight: 700; color: #1e293b; }
+    .badge {
+      background: #d1fae5;
+      color: #065f46;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .desc { font-size: 13px; color: #64748b; line-height: 1.65; margin-bottom: 24px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-size: 13px; font-weight: 500; color: #475569; margin-bottom: 4px; }
+    input[type=number] {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 15px;
+      color: #1e293b;
+      outline: none;
+    }
+    .btn {
+      margin-top: 24px;
+      width: 100%;
+      background: #059669;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+    }
+    .result-box {
+      margin-top: 24px;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .result-label { font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: .08em; text-transform: uppercase; }
+    .result-value { font-size: 28px; font-weight: 800; color: #059669; margin-top: 4px; }
+    .result-note { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+  </style>
 </head>
-<body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
-
-  <div class="w-full max-w-md rounded-xl bg-white p-8 shadow-lg ring-1 ring-slate-200">
-    <div class="mb-6 flex items-center justify-between">
-      <h1 class="text-xl font-bold text-slate-800">割り勘チェック</h1>
-      <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800">JS Week06</span>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <h1>割り勘チェック</h1>
+      <span class="badge">JS Week06</span>
     </div>
-    <p class="mb-6 text-sm leading-relaxed text-slate-600">合計金額と人数を入れて、1人あたり（円・切り上げ）を出します。</p>
+    <p class="desc">合計金額と人数を入れて、1人あたり（円・切り上げ）を出します。</p>
 
-    <div class="space-y-4">
-      <div>
-        <label for="total" class="mb-1 block text-sm font-medium text-slate-700">合計金額（円）</label>
-        <input id="total" type="number" min="0" placeholder="例：4800" value="4800"
-          class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200">
-      </div>
-      <div>
-        <label for="people" class="mb-1 block text-sm font-medium text-slate-700">人数</label>
-        <input id="people" type="number" min="1" placeholder="例：3" value="3"
-          class="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200">
-      </div>
+    <div class="field">
+      <label for="total">合計金額（円）</label>
+      <input id="total" type="number" value="4800" placeholder="例：4800">
+    </div>
+    <div class="field">
+      <label for="people">人数</label>
+      <input id="people" type="number" value="3" placeholder="例：3">
     </div>
 
-    <button type="button" id="calcBtn"
-      class="mt-6 w-full rounded-lg bg-emerald-600 py-3 text-center text-sm font-bold text-white shadow hover:bg-emerald-700 active:bg-emerald-800">
-      計算する
-    </button>
+    <button class="btn" type="button">計算する</button>
 
-    <div class="mt-6 rounded-lg border border-dashed border-slate-200 bg-slate-50 p-4 text-center">
-      <p class="text-xs font-medium uppercase tracking-wide text-slate-500">1人あたり</p>
-      <p id="result" class="mt-1 text-2xl font-bold tabular-nums text-emerald-700">1600 円</p>
-      <p class="mt-1 text-xs text-slate-500">※端数は切り上げ（Math.ceil）</p>
+    <div class="result-box">
+      <div class="result-label">1人あたり</div>
+      <div class="result-value">1600 円</div>
+      <div class="result-note">※端数は切り上げ（Math.ceil）</div>
     </div>
   </div>
-
-  <script>
-    const totalInput = document.querySelector("#total");
-    const peopleInput = document.querySelector("#people");
-    const result = document.querySelector("#result");
-    const calcBtn = document.querySelector("#calcBtn");
-
-    function render() {
-      const total = Number(totalInput.value);
-      const people = Number(peopleInput.value);
-      if (!Number.isFinite(total) || !Number.isFinite(people) || total <= 0 || people <= 0) {
-        result.textContent = "—";
-        return;
-      }
-      const per = Math.ceil(total / people);
-      result.textContent = per + " 円";
-    }
-
-    calcBtn.addEventListener("click", render);
-    render();
-  </script>
 </body>
 </html>
