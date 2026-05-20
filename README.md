@@ -9,13 +9,15 @@ git clone git@github.com:posse-ap/drill-ph1.git
 cd drill-ph1/week02-2   # その週・問題のフォルダ名（2桁: week02 など）
 ```
 
-各フォルダの **README.md** に、その問題でやることが書いてあります。
+各フォルダの **README.md** に、その問題の仕様と手順が書いてあります。
 
 ## フォルダ名
 
 - **使う:** `week06-1` のように週が2桁
 - **使わない:** `week6-1` など1桁（旧形式）
 
-## スタッフ向け
+## 作業の流れ
 
-仕様・配布ルール・`goal.png` 生成は **`curriculum-refactor`** 側の `new/PH1/drill-ph1/_staff/` と [`docs/decisions-2026-05-21.md`](https://github.com/posse-ap/curriculum-refactor/blob/main/docs/decisions-2026-05-21.md) を参照。完成答えの **`goal.html` は受講生 repo に含めない**。
+1. カリキュラムのミニドリルで「分解」の表を埋める
+2. このリポジトリの `index.html` を編集する
+3. 同じフォルダの **`goal.png`** と見比べて確認する
