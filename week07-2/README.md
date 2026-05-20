@@ -1,16 +1,18 @@
-# ミニドリル｜querySelector のバグ診断
+# 問題2：バグ診断（querySelector）（15分）
 
-## やること
+このフォルダ（`week07-2`）で作業してください。`index.html` を開いてください。
 
-1. **`index.html`** のバグを直す（完成答えの HTML は配布していない）
-2. カリキュラムの Step・確認方法どおり、動作や見た目を確認する
-3. 必要なら **`goal.png`** で修正後の見た目を参照する
+Console に **Cannot read properties of null** が出ます。
 
-## このフォルダのファイル
+ボタンを押すと文言が差し代わるのが正しい動きです。`querySelector` の**セレクター文字列**のどこが間違いか説明し、修正してください。
 
-| ファイル | 使い方 |
-|----------|--------|
-| `index.html` | バグ入り。ここを直す |
-| `goal.png` | 修正後の見た目の参考（ある場合） |
+`index.html` には次のようなバグがあります。
 
-フォルダ名は **`week07-2`**（1桁の旧フォルダ名は使わない）。
+```js
+// バグ: ID なのに # を付けていない
+const btn = document.querySelector("swapBtn");
+```
+
+**ヒント:** `document.querySelector("swapBtn")` は **タグ名 `swapBtn` を探している**状態です。`id="swapBtn"` を取りたいときは `document.querySelector("#swapBtn")` とし、ID には `#` が必要です。
+
+修正後、ボタンクリックで見出しとメッセージが差し替わることを確認してください。**`goal.png`** も参考にしてください。
