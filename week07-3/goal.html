@@ -3,122 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week07-3 マイダッシュボード</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #f1f5f9;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      padding: 24px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    header h1 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1e293b;
-    }
-    .badge {
-      background: #e0e7ff;
-      color: #3730a3;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 999px;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-    .stat-card {
-      border-radius: 10px;
-      padding: 20px;
-      color: #fff;
-    }
-    .stat-card.blue {
-      background: #3b82f6;
-    }
-    .stat-card.green {
-      background: #16a34a;
-    }
-    .stat-card .label {
-      font-size: 0.85rem;
-      font-weight: 500;
-      opacity: 0.9;
-      margin-bottom: 8px;
-    }
-    .stat-card .value {
-      font-size: 2rem;
-      font-weight: 700;
-    }
-    .btn-add {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      background: #6366f1;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      margin-bottom: 16px;
-    }
-    .btn-add:hover { background: #4f46e5; }
-    .task-list {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      padding: 16px;
-      list-style: none;
-    }
-    .task-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid #f1f5f9;
-      font-size: 0.9rem;
-      color: #334155;
-    }
-    .task-item:last-child { border-bottom: none; }
-    input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <title>Week07-3 ゴールUI｜復習ダッシュボード</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>マイダッシュボード</h1>
-    <span class="badge">Week01-07復習</span>
+<body class="min-h-screen bg-zinc-100">
+
+  <header class="border-b border-zinc-200 bg-white">
+    <div class="mx-auto flex max-w-4xl flex-col gap-2 px-6 py-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-indigo-600">POSSE · PH1</p>
+        <h1 class="text-2xl font-bold text-zinc-900">復習ダッシュボード</h1>
+        <p class="mt-1 text-sm text-zinc-500">Week01〜06 の要素を1ページに集約</p>
+      </div>
+      <a href="#" class="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-800">
+        使い方（ダミーリンク）
+      </a>
+    </div>
   </header>
 
-  <div class="grid-2">
-    <div class="stat-card blue">
-      <p class="label">今日のタスク</p>
-      <p class="value">3件</p>
-    </div>
-    <div class="stat-card green">
-      <p class="label">完了済み</p>
-      <p class="value">5件</p>
-    </div>
-  </div>
+  <main class="mx-auto max-w-4xl px-6 py-10">
+    <div class="flex flex-col gap-8 lg:flex-row">
+      <section class="flex-1 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200">
+        <h2 class="text-lg font-bold text-zinc-900">ミニ割り勘（JS）</h2>
+        <p class="mt-2 text-sm text-zinc-600">合計と人数から 1人あたり（切り上げ）</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <input id="billTotal" type="number" value="3600" placeholder="合計"
+            class="w-28 rounded border border-zinc-300 px-3 py-2 text-sm">
+          <span class="self-center text-zinc-400">÷</span>
+          <input id="billPeople" type="number" value="5" placeholder="人数"
+            class="w-24 rounded border border-zinc-300 px-3 py-2 text-sm">
+        </div>
+        <p id="billResult" class="mt-4 text-2xl font-bold text-indigo-700">720 円</p>
+      </section>
 
-  <button class="btn-add">タスクを追加</button>
+      <section class="flex-1 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200">
+        <h2 class="text-lg font-bold text-zinc-900">在庫つきカウンター（DOM）</h2>
+        <p class="mt-2 text-sm text-zinc-600">上限 5・0 未満にしない</p>
+        <div class="mt-6 flex items-center justify-center gap-4">
+          <button type="button" id="cDown" class="h-12 w-12 rounded-full bg-zinc-200 text-xl font-bold text-zinc-800">−</button>
+          <span id="cVal" class="min-w-[3rem] text-center text-4xl font-bold text-indigo-700">2</span>
+          <button type="button" id="cUp" class="h-12 w-12 rounded-full bg-indigo-600 text-xl font-bold text-white">+</button>
+        </div>
+        <p class="mt-4 text-center text-xs text-zinc-500">残り <span id="cLeft">3</span> 個まで</p>
+      </section>
+    </div>
 
-  <ul class="task-list">
-    <li class="task-item"><input type="checkbox"> コードレビュー</li>
-    <li class="task-item"><input type="checkbox"> MTG準備</li>
-    <li class="task-item"><input type="checkbox"> ドキュメント作成</li>
-  </ul>
+    <section class="mt-8 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-6">
+      <h2 class="text-sm font-bold text-zinc-700">チェックリスト（HTML）</h2>
+      <ul class="mt-3 list-inside list-disc space-y-1 text-sm text-zinc-600">
+        <li>セマンティックな <code class="rounded bg-white px-1">&lt;header&gt;</code> / <code class="rounded bg-white px-1">&lt;main&gt;</code></li>
+        <li>Tailwind でレスポンシブ Flex（<code class="rounded bg-white px-1">lg:flex-row</code>）</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const totalIn = document.querySelector("#billTotal");
+    const peopleIn = document.querySelector("#billPeople");
+    const billResult = document.querySelector("#billResult");
+
+    function updateBill() {
+      const t = Number(totalIn.value);
+      const p = Number(peopleIn.value);
+      if (t <= 0 || p <= 0) {
+        billResult.textContent = "—";
+        return;
+      }
+      billResult.textContent = Math.ceil(t / p) + " 円";
+    }
+
+    totalIn.addEventListener("input", updateBill);
+    peopleIn.addEventListener("input", updateBill);
+
+    const C_MAX = 5;
+    let c = 2;
+    const cVal = document.querySelector("#cVal");
+    const cLeft = document.querySelector("#cLeft");
+    const cDown = document.querySelector("#cDown");
+    const cUp = document.querySelector("#cUp");
+
+    function refreshC() {
+      cVal.textContent = String(c);
+      cLeft.textContent = String(C_MAX - c);
+      cDown.disabled = c <= 0;
+      cUp.disabled = c >= C_MAX;
+      cDown.classList.toggle("opacity-40", c <= 0);
+      cUp.classList.toggle("opacity-40", c >= C_MAX);
+    }
+
+    cDown.addEventListener("click", () => {
+      if (c > 0) c -= 1;
+      refreshC();
+    });
+    cUp.addEventListener("click", () => {
+      if (c < C_MAX) c += 1;
+      refreshC();
+    });
+
+    updateBill();
+    refreshC();
+  </script>
 </body>
 </html>

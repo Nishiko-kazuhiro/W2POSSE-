@@ -3,61 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week04-3 総復習 ゴールUI</title>
+  <title>Week04-3 ゴールUI</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-slate-100 min-h-screen">
 
-  <!-- Header: flex justify-between (Week02 復習) -->
-  <header class="bg-white shadow px-8 py-4">
-    <div class="flex justify-between items-center max-w-5xl mx-auto">
-      <h1 class="text-xl font-bold text-indigo-700">🚀 POSSE Dev</h1>
-      <nav class="flex gap-6 text-sm text-gray-600">
-        <a href="#" class="hover:text-indigo-600 transition">ホーム</a>
-        <a href="#" class="hover:text-indigo-600 transition">チーム</a>
-        <a href="#" class="hover:text-indigo-600 transition">作品</a>
+  <header class="bg-white shadow">
+    <div class="flex justify-between items-center px-6 py-4 max-w-5xl mx-auto">
+      <p class="text-lg font-bold text-slate-800">POSSE Studio</p>
+      <nav class="flex gap-4 text-sm text-slate-600">
+        <a href="#" class="hover:text-indigo-600">About</a>
+        <a href="#" class="hover:text-indigo-600">Works</a>
+        <a href="#" class="hover:text-indigo-600">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main: grid grid-cols-3 (Week04 復習) -->
-  <main class="max-w-5xl mx-auto px-8 py-10">
-
-    <!-- Hero: img tag (Week01 復習) -->
-    <div class="mb-10 text-center">
-      <img src="./images/team.svg" alt="開発チーム" class="mx-auto rounded-xl shadow mb-4" width="400" height="200">
-      <h2 class="text-2xl font-bold text-gray-800">みんなで作る、0→1の体験</h2>
-      <p class="text-gray-500 mt-2">HTML / CSS / JavaScript / Grid / Flex を組み合わせて、リアルなページを作ろう。</p>
+  <main class="max-w-5xl mx-auto px-6 py-8">
+    <div class="grid grid-cols-3 gap-4">
+      <section class="col-span-2 bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+        <img src="./images/team.svg" alt="学習チームのイラスト" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold text-slate-900 mb-2">仲間と作るWebページ</h2>
+        <p class="text-slate-600 text-sm leading-relaxed">HTMLの構造、Flexboxの横並び、Gridのカード配置を組み合わせて練習します。</p>
+      </section>
+      <aside class="space-y-4">
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+          <h3 class="font-bold text-slate-800 mb-1">HTML復習</h3>
+          <p class="text-slate-500 text-sm">タグと意味のある構造</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+          <h3 class="font-bold text-slate-800 mb-1">Flex復習</h3>
+          <p class="text-slate-500 text-sm">ヘッダーの左右配置</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+          <h3 class="font-bold text-slate-800 mb-1">Grid練習</h3>
+          <p class="text-slate-500 text-sm">2列 + サイドの配置</p>
+        </div>
+      </aside>
     </div>
-
-    <!-- 3カラムグリッド -->
-    <div class="grid grid-cols-3 gap-6">
-
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
-        <div class="text-3xl mb-3">🎨</div>
-        <h3 class="font-bold text-gray-800 mb-1">デザイン</h3>
-        <p class="text-gray-500 text-sm">Tailwind で素早くUIを構築。クラスで直感的にスタイリング。</p>
-      </div>
-
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
-        <div class="text-3xl mb-3">⚙️</div>
-        <h3 class="font-bold text-gray-800 mb-1">開発</h3>
-        <p class="text-gray-500 text-sm">HTML・CSS・JSの基礎を固めて、フルスタックへ。</p>
-      </div>
-
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
-        <div class="text-3xl mb-3">🚀</div>
-        <h3 class="font-bold text-gray-800 mb-1">リリース</h3>
-        <p class="text-gray-500 text-sm">作ったものをデプロイして、世界に届ける体験を積む。</p>
-      </div>
-
-    </div>
-
   </main>
-
-  <footer class="bg-gray-800 text-gray-400 text-center py-4 text-sm mt-10">
-    &copy; 2025 POSSE Dev
-  </footer>
 
 </body>
 </html>

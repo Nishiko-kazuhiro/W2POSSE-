@@ -1,30 +1,51 @@
-# PH1 ミニドリル（Week06〜08 追加分）
+# drill-ph1（PH1 ミニドリル単一リポジトリ）
 
-教材リポジトリ（`curriculum-refactor`）と同じ内容を、別リポジトリ `drill-ph1` で配布する場合は、このフォルダを **`curriculum-modules/drill-ph1/` に rsync する**のが簡単です。
+PH1 のミニドリルは **このリポジトリだけ** を正とします。カリキュラムに `week02-2` と書いてあるときは、**このリポジトリ内の `week02-2/` フォルダ** を指します。
+
+| 向け | ドキュメント |
+|------|----------------|
+| 受講生 | 各 `weekNN-N/README.md` ／ [ミニドリルの作業場所](../v4/minidrill-workspace.md) |
+| スタッフ | [MINIDRILL-SPEC.md](./MINIDRILL-SPEC.md) ／ [STATUS.md](./STATUS.md) |
+
+## 受講生：初回セットアップ
 
 ```bash
-rsync -a /Users/jun/projects/posse/curriculum-refactor/new/PH1/drill-ph1/ \
-  /Users/jun/projects/posse/curriculum-modules/drill-ph1/
+git clone git@github.com:posse-ap/drill-ph1.git
+cd drill-ph1
+ls week02-2   # フォルダと README があることを確認
+cd week02-2
 ```
 
-手元のパスに読み替えてください。
+- **`stub`:** README のみ。カリキュラムの仕様表どおり、このフォルダ内で `index.html` を新規作成する
+- **`ready`:** `index.html`（骨組み）と `goal.html` / `goal.png` あり。TODO を埋めて `goal` と見比べる
 
-## goal.png について
+課題用リポジトリ（`my-profile` 等）にまとめたい場合は、作業後に `week02-2` フォルダごとコピーして PR してもよい。
 
-- 各 `week**-* /goal.png` は、**実機の Chrome で `goal.html` を headless キャプチャ**すると教材画像と一致しやすいです。
-- 自動生成スクリプト: `render_goal_png.py`（macOS + Google Chrome 想定）。
-- プレースホルダの単色 PNG だけを置いた場合は、ローカルで上記を実行して差し替えてください。
+## フォルダ名（v4 確定）
 
-## フォルダ一覧（Week06〜08）
+```
+weekNN-N/
+```
 
-| フォルダ | 内容 |
-|---|---|
-| `week06-1` | 割り勘（切り上げ） |
-| `week06-2` | バグ診断（文字列連結） |
-| `week06-3` | 復習（Flex + 小計計算） |
-| `week07-1` | 在庫付きカウンター |
-| `week07-2` | バグ診断（querySelector） |
-| `week07-3` | 復習ダッシュボード |
-| `week08-1` | 備品テーブル + forEach |
-| `week08-2` | バグ診断（map の return） |
-| `week08-3` | 名前ソート + カード再描画 |
+- 週は **2桁**（`week02`）。`week2-2` など **1桁は旧形式で使わない**
+
+## 開発・配布（スタッフ）
+
+このディレクトリは `curriculum-refactor` 内の同期元です。更新後に GitHub へ反映します。
+
+```bash
+rsync -a new/PH1/drill-ph1/ /path/to/curriculum-modules/drill-ph1/
+# または posse-ap/drill-ph1 リポジトリへ push
+```
+
+`goal.png` 生成: `python3 render_goal_png.py week06-1`
+
+### ミニドリル用の写真素材（`images/*.jpg`）
+
+- **placehold.co は使わない**（返ってくるのは SVG で、拡張子が `.jpg` でも中身が JPEG ではない）
+- 単色プレースホルダが必要なときは `scripts/make-jpeg-placeholder.sh`（Chrome スクショ → macOS `sips` で **本物の JPEG** に変換）
+- イラストは `team.svg` のように **SVG を同梱**する
+
+## 旧フォルダについて
+
+リポジトリに `week2-1` など **1桁** のフォルダが残っている場合、v4 カリキュラムとは無関係です。削除または [LEGACY.md](./LEGACY.md) を参照。
