@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Render drill goal.html to goal.png using Chrome headless (macOS)."""
+"""Render staff goal.html to student goal.png using Chrome headless (macOS)."""
 import subprocess
 import sys
 from pathlib import Path
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 ROOT = Path(__file__).resolve().parent
+STAFF = ROOT / "_staff"
 
 
-def render_one(d: Path) -> None:
-    html = d / "goal.html"
-    png = d / "goal.png"
+def render_one(folder: str) -> None:
+    html = STAFF / folder / "goal.html"
+    png = ROOT / folder / "goal.png"
     if not html.is_file():
-        print("skip (no goal.html):", html)
+        print("skip (no staff goal.html):", html)
         return
-    url = html.as_uri()
     subprocess.run(
         [
             CHROME,
@@ -22,7 +22,7 @@ def render_one(d: Path) -> None:
             f"--screenshot={png}",
             "--window-size=800,900",
             "--no-sandbox",
-            url,
+            html.as_uri(),
         ],
         check=True,
         timeout=60,
@@ -58,17 +58,19 @@ def main() -> None:
 
     if targets:
         for name in targets:
-            render_one(ROOT / name)
+            render_one(name)
     else:
-        for d in sorted(ROOT.iterdir()):
-            if d.is_dir() and d.name.startswith("week") and (d / "goal.html").is_file():
-                render_one(d)
+        if STAFF.is_dir():
+            for d in sorted(STAFF.iterdir()):
+                if d.is_dir() and d.name.startswith("week"):
+                    render_one(d.name)
 
     images = ROOT.parent / "images"
     for html_name, png_name in [
         ("minidrill-week01-goal.html", "minidrill-week01-goal.png"),
         ("minidrill-week01-artist.html", "minidrill-week01-artist.png"),
         ("minidrill-week01-event.html", "minidrill-week01-event.png"),
+        ("minidrill-week02-goal.html", "minidrill-week02-goal.png"),
         ("minidrill-week03-goal.html", "minidrill-week03-goal.png"),
         ("minidrill-week03-pricing-goal.html", "minidrill-week03-pricing-goal.png"),
     ]:
