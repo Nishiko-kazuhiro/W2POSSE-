@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week09 ミニドリル 問題1｜お問い合わせフォーム</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 flex items-center justify-center p-8">
+
+  <div class="w-full max-w-md rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+    <h1 class="text-xl font-bold text-slate-900">お問い合わせ</h1>
+    <p class="mt-1 mb-6 text-sm text-slate-500">お名前とお問い合わせ内容を入力してください</p>
+
+    <form id="contactForm" class="space-y-4">
+      <div>
+        <label for="name" class="mb-1 block text-sm font-medium text-slate-700">お名前</label>
+        <input
+          type="text"
+          id="name"
+          class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="山田太郎"
+        >
+      </div>
+
+      <div>
+        <label for="message" class="mb-1 block text-sm font-medium text-slate-700">お問い合わせ内容</label>
+        <textarea
+          id="message"
+          rows="4"
+          class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="メッセージを入力してください"
+        ></textarea>
+      </div>
+
+      <p id="result" class="text-sm font-medium"></p>
+
+      <button
+        type="submit"
+        class="w-full rounded bg-blue-600 py-2 font-bold text-white hover:bg-blue-700"
+      >
+        送信する
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const result = document.getElementById("result");
+
+    // TODO: submit イベントを登録する
+    //   1. event.preventDefault() でリロードを止める
+    //   2. name と message の .value を取得する
+    //   3. name が空なら「お名前を入力してください」を赤字で表示して return
+    //   4. message が空なら「お問い合わせ内容を入力してください」を赤字で表示して return
+    //   5. 両方入力されていれば「〇〇さんのお問い合わせを受け付けました」を緑字で表示する
+
+  </script>
+</body>
+</html>
