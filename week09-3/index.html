@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week09 ミニドリル 問題3｜参加者登録リスト</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 p-8">
+
+  <div class="mx-auto max-w-2xl">
+    <header class="mb-6">
+      <h1 class="text-2xl font-bold text-slate-900">勉強会 参加者登録</h1>
+      <p class="mt-1 text-sm text-slate-600">フォームから登録すると、下のリストに追加されます（Week08の配列・forEach の復習）</p>
+    </header>
+
+    <form id="entryForm" class="mb-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-4">
+      <div>
+        <label for="name" class="mb-1 block text-sm font-medium text-slate-700">お名前</label>
+        <input
+          type="text"
+          id="name"
+          class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          placeholder="山田太郎"
+        >
+      </div>
+
+      <div>
+        <label for="role" class="mb-1 block text-sm font-medium text-slate-700">役割</label>
+        <select
+          id="role"
+          class="w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option value="">選択してください</option>
+          <option value="デザイナー">デザイナー</option>
+          <option value="エンジニア">エンジニア</option>
+          <option value="PdM">PdM</option>
+        </select>
+      </div>
+
+      <p id="error" class="text-sm font-medium text-red-500"></p>
+
+      <button
+        type="submit"
+        class="w-full rounded bg-blue-600 py-2 font-bold text-white hover:bg-blue-700"
+      >
+        追加する
+      </button>
+    </form>
+
+    <div id="memberList" class="grid gap-3"></div>
+  </div>
+
+  <script>
+    const members = [
+      { name: "田中太郎", role: "デザイナー" },
+      { name: "鈴木花子", role: "エンジニア" },
+    ];
+
+    const form = document.getElementById("entryForm");
+    const error = document.getElementById("error");
+    const memberList = document.getElementById("memberList");
+
+    // TODO 1: render 関数を作る
+    //   - memberList.innerHTML = "" で一度空にする
+    //   - members.forEach でカードを作って appendChild する（Week08の復習）
+    //   - 名前・役割は createElement + textContent で入れる（入力値をそのまま innerHTML に渡さない）
+
+    // TODO 2: form の submit イベントを登録する
+    //   - event.preventDefault() でリロードを止める
+    //   - name / role の .value を取得する
+    //   - name が空なら「お名前を入力してください」を error に表示して return
+    //   - role が空（"" ）なら「役割を選択してください」を表示して return
+    //   - members に push して render() を呼び、入力欄を空に戻す
+
+    // TODO 3: 初期表示のために render() を一度呼ぶ
+
+  </script>
+</body>
+</html>

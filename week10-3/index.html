@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week10 ミニドリル 問題3｜投稿検索</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 p-8">
+
+  <div class="mx-auto max-w-2xl">
+    <header class="mb-6">
+      <h1 class="text-2xl font-bold text-slate-900">投稿検索</h1>
+      <p class="mt-1 text-sm text-slate-600">APIから取得した投稿を、入力したキーワードで絞り込みます（Week08のfilter・Week09の入力値取得の復習）</p>
+    </header>
+
+    <input
+      type="text"
+      id="keyword"
+      class="mb-4 w-full rounded border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      placeholder="キーワードでタイトルを絞り込む"
+    >
+
+    <p id="status" class="mb-4 text-sm text-slate-500">読み込み中...</p>
+
+    <ul id="postList" class="grid gap-3"></ul>
+  </div>
+
+  <script>
+    const keywordInput = document.getElementById("keyword");
+    const status = document.getElementById("status");
+    const postList = document.getElementById("postList");
+
+    let allPosts = []; // 取得した投稿をここに貯めて、絞り込みに使い回す
+
+    // TODO 1: render(posts) 関数を作る（Week08の復習）
+    //   - postList.innerHTML = "" で一度空にする
+    //   - posts.forEach で <li> を作り、post.title を textContent に入れて appendChild する
+    //     （li のクラス例: "rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm text-slate-800"）
+
+    // TODO 2: async 関数でデータを取得する
+    //   - await fetch で "https://jsonplaceholder.typicode.com/posts" を取得
+    //   - response.ok を確認し、await response.json() で配列にする
+    //   - slice(0, 10) で10件にして allPosts に代入し、render(allPosts) を呼ぶ
+    //   - status を空にする。try/catch で失敗時は status に「取得に失敗しました」を表示する
+
+    // TODO 3: keyword の "input" イベントで絞り込む（Week09の .value の復習）
+    //   - keywordInput.value.trim() を取得する
+    //   - allPosts を filter して title に keyword を含むものだけにする
+    //     ヒント: post.title.includes(keyword)
+    //   - 絞り込んだ配列を render() に渡す
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week10 ミニドリル 問題1｜投稿タイトル一覧</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 p-8">
+
+  <div class="mx-auto max-w-2xl">
+    <header class="mb-6">
+      <h1 class="text-2xl font-bold text-slate-900">投稿タイトル一覧</h1>
+      <p class="mt-1 text-sm text-slate-600">APIから投稿を取得し、最初の5件のタイトルを表示します</p>
+    </header>
+
+    <p id="status" class="mb-4 text-sm text-slate-500">読み込み中...</p>
+
+    <ul id="postList" class="grid gap-3"></ul>
+  </div>
+
+  <script>
+    const status = document.getElementById("status");
+    const postList = document.getElementById("postList");
+
+    // TODO: async 関数を作り、ページ読み込み時に呼び出す
+    //   1. await fetch で "https://jsonplaceholder.typicode.com/posts" を取得する
+    //   2. response.ok が false なら throw new Error(...) でエラーにする
+    //   3. await response.json() で配列に変換し、console.log で中身を確認する
+    //   4. slice(0, 5) で最初の5件だけにする
+    //   5. forEach で <li> を作り、post.title を textContent に入れて postList に appendChild する
+    //      （li のクラス例: "rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm text-slate-800"）
+    //   6. 取得できたら status を空にする（status.textContent = ""）
+    //   7. try/catch でエラーを受け取り、catch では status に「取得に失敗しました」を表示する
+
+  </script>
+</body>
+</html>
