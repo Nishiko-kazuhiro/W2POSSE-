@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week12 ミニドリル 問題3｜作品カードのホバー演出</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 p-8">
+
+  <div class="mx-auto max-w-3xl">
+    <header class="mb-6">
+      <h1 class="text-2xl font-bold text-slate-900">作品ギャラリー</h1>
+      <p class="mt-1 text-sm text-slate-600">普段はサムネイルだけ。ホバーすると「詳細を見る」が浮かび、カードが少し持ち上がります</p>
+    </header>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+
+      <!-- TODO: 各カードを次のように仕上げる
+           1. 外側の <div> に group を足し、transition-all duration-300 hover:-translate-y-1 hover:shadow-lg でカードを浮かせる
+           2. オーバーレイ（bg-black/50 の <div>）に opacity-0 group-hover:opacity-100 transition-opacity duration-300 を足し、
+              普段は隠れて、親にホバーしたときだけ表示されるようにする -->
+
+      <div class="relative overflow-hidden rounded-xl shadow-sm">
+        <div class="flex h-40 items-center justify-center bg-indigo-500 text-xl font-bold text-white">作品1</div>
+        <div class="absolute inset-0 flex items-center justify-center bg-black/50">
+          <span class="font-bold text-white">詳細を見る</span>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden rounded-xl shadow-sm">
+        <div class="flex h-40 items-center justify-center bg-emerald-500 text-xl font-bold text-white">作品2</div>
+        <div class="absolute inset-0 flex items-center justify-center bg-black/50">
+          <span class="font-bold text-white">詳細を見る</span>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden rounded-xl shadow-sm">
+        <div class="flex h-40 items-center justify-center bg-rose-500 text-xl font-bold text-white">作品3</div>
+        <div class="absolute inset-0 flex items-center justify-center bg-black/50">
+          <span class="font-bold text-white">詳細を見る</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

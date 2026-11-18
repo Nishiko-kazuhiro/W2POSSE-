@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week12 ミニドリル 問題1｜ホバーアニメーション</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-50 p-8">
+
+  <div class="mx-auto max-w-3xl">
+    <header class="mb-6">
+      <h1 class="text-2xl font-bold text-slate-900">スキルカード</h1>
+      <p class="mt-1 text-sm text-slate-600">カードにホバーすると少し浮き上がり、影が強くなるようにします</p>
+    </header>
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+
+      <!-- TODO: 3枚のカードそれぞれに、ホバーで浮き上がるアニメーションを足す
+           - transition-all duration-300 でアニメーションを滑らかにする
+           - hover:-translate-y-1 で少し上に浮かせる
+           - hover:shadow-lg で影を強くする
+           ※ 浮き上がりはマウスを乗せたときに見えます（静止画では分かりません） -->
+
+      <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900">HTML</h2>
+        <p class="mt-2 text-sm text-slate-600">構造をマークアップする</p>
+      </div>
+
+      <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900">Tailwind CSS</h2>
+        <p class="mt-2 text-sm text-slate-600">クラスで見た目を整える</p>
+      </div>
+
+      <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900">JavaScript</h2>
+        <p class="mt-2 text-sm text-slate-600">動きとデータを扱う</p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
